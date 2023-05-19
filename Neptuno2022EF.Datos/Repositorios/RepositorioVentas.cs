@@ -23,15 +23,42 @@ namespace Neptuno2022EF.Datos.Repositorios
             _context.Ventas.Add(venta);
         }
 
-        public List<VentaListDto> Filtrar(Func<Venta, bool> predicado)
+        public List<VentaListDto> Filtrar(Func<Venta, bool> predicado, int cantidad, int pagina)
         {
-            throw new NotImplementedException();
+            return _context.Ventas.Include(v => v.Cliente)
+             .Where(predicado)
+              .OrderBy(v => v.FechaVenta)
+              .Skip(cantidad * (pagina - 1))
+              .Take(cantidad)
+              .Select(v => new VentaListDto
+              {
+                    VentaId = v.VentaId,
+                    FechaVenta = v.FechaVenta,
+                    Cliente = v.Cliente.Nombre,
+                    Total=v.Total,
+                    Estado=v.Estado.ToString()
+              }).ToList();
         }
 
         public int GetCantidad()
         {
             return _context.Ventas.Count();
         }
+        public int GetCantidad(Func<Venta, bool> predicado)
+        {
+            return _context.Ventas.Count(predicado);
+        }
+        //public List<VentaListDto> GetFechas()
+        //{
+        //    return _context.Ventas.OrderBy(v => v.FechaVenta).Select(v => new VentaListDto
+        //    {
+        //        VentaId = v.VentaId,
+        //        FechaVenta = v.FechaVenta,
+        //        Cliente = v.Cliente.Nombre,
+        //        Total = v.Total,
+        //        Estado = v.Estado.ToString()
+        //    }).ToList();
+        //}
 
         public Venta GetVentaPorId(int id)
         {
@@ -40,19 +67,41 @@ namespace Neptuno2022EF.Datos.Repositorios
 
         public List<VentaListDto> GetVentas()
         {
-            return _context.Ventas.Include(v=>v.Cliente).OrderBy(v=>v.FechaVenta).Select(v=>new VentaListDto
+            return _context.Ventas.Include(v=>v.Cliente).Select(v=>new VentaListDto
              {
                     VentaId=v.VentaId,
                     FechaVenta=v.FechaVenta,
                     Cliente=v.Cliente.Nombre,
                     Total=v.Total,
                     Estado=v.Estado.ToString()
-             }).ToList();
+             }).AsNoTracking().ToList();
+        }
+
+        public List<VentaListDto> GetVentas(int clienteId)
+        {
+            try
+            {
+                return _context.Ventas.Include(v => v.Cliente).
+                    Where(v=>v.ClienteId==clienteId).Select(v => new VentaListDto
+                {
+                    VentaId = v.VentaId,
+                    FechaVenta = v.FechaVenta,
+                    Cliente = v.Cliente.Nombre,
+                    Total = v.Total,
+                    Estado = v.Estado.ToString()
+                }).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public List<VentaListDto> GetVentasPorPagina(int cantidad, int pagina)
         {
-            return _context.Ventas.Include(v => v.Cliente).OrderBy(v => v.ClienteId).Skip(cantidad * (pagina - 1)).Take(cantidad).Select
+            return _context.Ventas.Include(v => v.Cliente).OrderBy(v => v.ClienteId).
+                Skip(cantidad * (pagina - 1)).Take(cantidad).Select
                 (v => new VentaListDto
             {
                     VentaId = v.VentaId,

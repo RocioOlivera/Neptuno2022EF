@@ -55,7 +55,7 @@ namespace Neptuno2022EF.Datos.Repositorios
                     DetalleVentaId=d.DetalleVentaId,
                     Producto=d.Producto.NombreProducto,
                     Cantidad=d.Cantidad,
-                    PrecioUnitario=d.PrecioUnitario,
+                    PrecioUnitario=d.PrecioUnitario
 
                 }).ToList();
         }

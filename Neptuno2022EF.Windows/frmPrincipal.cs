@@ -65,5 +65,16 @@ namespace Neptuno2022EF.Windows
             frmProductos frm=new frmProductos(DI.Create<IServiciosProductos>());
             frm.ShowDialog(this);
         }
+
+        private void btnCtasCtes_Click(object sender, EventArgs e)
+        {
+            frmCtaCte frm = new frmCtaCte(DI.Create<IServiciosCtasCtes>());
+            frm.ShowDialog(this);
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

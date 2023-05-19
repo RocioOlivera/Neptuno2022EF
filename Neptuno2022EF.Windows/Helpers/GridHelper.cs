@@ -1,5 +1,7 @@
 ﻿using Neptuno2022EF.Entidades.Dtos.Ciudad;
 using Neptuno2022EF.Entidades.Dtos.Cliente;
+using Neptuno2022EF.Entidades.Dtos.CtaCte;
+using Neptuno2022EF.Entidades.Dtos.DetalleCtaCte;
 using Neptuno2022EF.Entidades.Dtos.DetalleVenta;
 using Neptuno2022EF.Entidades.Dtos.Producto;
 using Neptuno2022EF.Entidades.Dtos.Proveedor;
@@ -86,8 +88,16 @@ namespace Neptuno2022EF.Windows.Helpers
                     r.Cells[2].Value = detalle.PrecioUnitario;
                     r.Cells[3].Value = detalle.Subtotal;
                     break;
-
-
+                case CtaCteListDto ctaCte:
+                    r.Cells[0].Value = ctaCte.Cliente;
+                    r.Cells[1].Value = ctaCte.Saldo;
+                    break;
+                case DetalleCtaCteListDto detalleCta:
+                    r.Cells[0].Value = detalleCta.FechaMovimiento;
+                    r.Cells[1].Value = detalleCta.Movimiento;
+                    r.Cells[2].Value = detalleCta.Debe;
+                    r.Cells[3].Value = detalleCta.Haber;
+                    break;
             }
 
             r.Tag = obj;

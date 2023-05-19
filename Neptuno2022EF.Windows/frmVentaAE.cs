@@ -31,13 +31,32 @@ namespace Neptuno2022EF.Windows
         }
         private void CancelarButton_Click(object sender, EventArgs e)
         {
-            ActualizarUnidadesDisponibles();
-            DialogResult = DialogResult.Cancel;
+            MessageBox.Show("¿Está seguro de cancelar la venta?", "confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult dr = new DialogResult();
+            if (dr==DialogResult.No)
+            {
+                return;
+            }
+            else
+            {
+                BorrarUnidadesDisponibles();
+                DialogResult = DialogResult.Cancel;
+            }
+        }
+
+        private void BorrarUnidadesDisponibles() 
+        {
+            
         }
 
         private void ActualizarUnidadesDisponibles()
         {
 
+        }
+
+        private void btnCancelarProducto_Click(object sender, EventArgs e)
+        {
+            LimpiarControles();
         }
 
         private Cliente cliente;
@@ -108,6 +127,7 @@ namespace Neptuno2022EF.Windows
             nudCantidad.Value = 0;
             nudCantidad.Maximum = 0;
             nudCantidad.Enabled = false;
+            ActualizarUnidadesDisponibles();
         }
 
         private void MostarDatosProducto()
@@ -138,10 +158,7 @@ namespace Neptuno2022EF.Windows
 
         }
 
-        private void btnCancelarProducto_Click(object sender, EventArgs e)
-        {
-            LimpiarControles();
-        }
+
 
         private void LimpiarControles()
         {

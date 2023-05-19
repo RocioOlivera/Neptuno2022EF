@@ -25,6 +25,7 @@ namespace Neptuno2022EF.Datos
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Venta> Ventas { get; set; }
+        public DbSet<CtaCte>CtaCtes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

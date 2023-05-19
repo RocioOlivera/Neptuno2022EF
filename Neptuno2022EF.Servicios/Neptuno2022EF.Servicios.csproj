@@ -46,6 +46,7 @@
     <Compile Include="Interfaces\IServiciosCategorias.cs" />
     <Compile Include="Interfaces\IServiciosCiudades.cs" />
     <Compile Include="Interfaces\IServiciosClientes.cs" />
+    <Compile Include="Interfaces\IServiciosCtasCtes.cs" />
     <Compile Include="Interfaces\IServiciosPaises.cs" />
     <Compile Include="Interfaces\IServiciosProductos.cs" />
     <Compile Include="Interfaces\IServiciosProveedores.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Servicios\ServiciosCategorias.cs" />
     <Compile Include="Servicios\ServiciosCiudades.cs" />
     <Compile Include="Servicios\ServiciosClientes.cs" />
+    <Compile Include="Servicios\ServiciosCtasCtes.cs" />
     <Compile Include="Servicios\ServiciosPaises.cs" />
     <Compile Include="Servicios\ServiciosProductos.cs" />
     <Compile Include="Servicios\ServiciosProveedores.cs" />

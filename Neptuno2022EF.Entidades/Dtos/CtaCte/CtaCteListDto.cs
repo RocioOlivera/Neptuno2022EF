@@ -1,13 +1,12 @@
-﻿using NuevaAppComercial2022.Entidades.Entidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Neptuno2022EF.Entidades.Entidades
+namespace Neptuno2022EF.Entidades.Dtos.CtaCte
 {
-    public class CtaCte
+    public class CtaCteListDto
     {
         public int CtaCteId { get; set; }
         public DateTime FechaMovimiento { get; set; }
@@ -15,10 +14,7 @@ namespace Neptuno2022EF.Entidades.Entidades
         public decimal Debe { get; set; }
         public decimal Haber { get; set; }
         public decimal Saldo { get; set; }
-        public int ClienteId { get; set; }
-        public byte[] RowVersion { get; set; }
-        public Cliente Cliente { get; set; }
-
+        public string Cliente { get; set; }
 
     }
 }

@@ -34,6 +34,13 @@ namespace Neptuno2022EF.Datos.Repositorios
             _context.Entry(productoInDb).State = EntityState.Modified;
         }
 
+        public void BorrarUnidadesEnPedido(int cantidad=0)
+        {
+            var productoInDb = _context.Productos.SingleOrDefault(p => p.UnidadesEnPedido >= 0);
+            productoInDb.UnidadesEnPedido = cantidad;
+            _context.Entry(productoInDb).State = EntityState.Modified;
+        }
+
         public void Agregar(Producto producto)
         {
             _context.Productos.Add(producto);

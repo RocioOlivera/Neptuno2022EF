@@ -71,6 +71,18 @@
     <Compile Include="frmCategorias.Designer.cs">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCtaCte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCtaCte.Designer.cs">
+      <DependentUpon>frmCtaCte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetalleCtaCte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalleCtaCte.Designer.cs">
+      <DependentUpon>frmDetalleCtaCte.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,11 +199,23 @@
     <Compile Include="Helpers\MessageHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmSeleccionarClienteFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarClienteFecha.Designer.cs">
+      <DependentUpon>frmSeleccionarClienteFecha.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmCategoriaAE.resx">
       <DependentUpon>frmCategoriaAE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCtaCte.resx">
+      <DependentUpon>frmCtaCte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalleCtaCte.resx">
+      <DependentUpon>frmDetalleCtaCte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDetalleVenta.resx">
       <DependentUpon>frmDetalleVenta.cs</DependentUpon>
@@ -257,6 +281,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="frmSeleccionarClienteFecha.resx">
+      <DependentUpon>frmSeleccionarClienteFecha.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

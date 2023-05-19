@@ -3,6 +3,7 @@ using Neptuno2022EF.Entidades.Dtos.Ciudad;
 using Neptuno2022EF.Entidades.Dtos.Cliente;
 using Neptuno2022EF.Entidades.Dtos.Producto;
 using Neptuno2022EF.Entidades.Dtos.Proveedor;
+using Neptuno2022EF.Entidades.Dtos.Venta;
 using Neptuno2022EF.Entidades.Entidades;
 using Neptuno2022EF.Ioc;
 using Neptuno2022EF.Servicios.Interfaces;
@@ -110,5 +111,20 @@ namespace Neptuno2022EF.Windows.Helpers
             combo.SelectedIndex = 0;
         }
 
+        //public static void CargarComboFechas(ref ComboBox combo)
+        //{
+        //    IServiciosVentas _servicio = DI.Create<IServiciosVentas>();
+        //    var lista = _servicio.GetFechas();
+        //    var defaultFecha = new VentaListDto
+        //    {
+        //        VentaId = 0,
+        //        FechaVenta = DateTime.Parse("Seleccione Fecha")
+        //    };
+        //    lista.Insert(0, defaultFecha);
+        //    combo.DataSource = lista;
+        //    combo.ValueMember = "VentaId";
+        //    combo.DisplayMember = "FechaVenta";
+        //    combo.SelectedIndex = 0;
+        //}
     }
 }

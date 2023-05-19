@@ -55,6 +55,7 @@
     <Compile Include="EntityTypeConfigurations\CategoriaEntityTypeConfigurations.cs" />
     <Compile Include="EntityTypeConfigurations\CiudadEntityTypeConfigurations.cs" />
     <Compile Include="EntityTypeConfigurations\ClienteEntityTypeConfigurations.cs" />
+    <Compile Include="EntityTypeConfigurations\CtacteEntityTypeConfigurations.cs" />
     <Compile Include="EntityTypeConfigurations\DetalleVentaEntityTypeConfigurations.cs" />
     <Compile Include="EntityTypeConfigurations\PaisEntityTypeConfigurations.cs" />
     <Compile Include="EntityTypeConfigurations\ProductoEntityTypeConfigurations.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Interfaces\IRepositorioCategorias.cs" />
     <Compile Include="Interfaces\IRepositorioCiudades.cs" />
     <Compile Include="Interfaces\IRepositorioClientes.cs" />
+    <Compile Include="Interfaces\IRepositorioCtasCtes.cs" />
     <Compile Include="Interfaces\IRepositorioPaises.cs" />
     <Compile Include="Interfaces\IRepositorioProductos.cs" />
     <Compile Include="Interfaces\IRepositorioProveedores.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Repositorios\RepositorioCategorias.cs" />
     <Compile Include="Repositorios\RepositorioCiudades.cs" />
     <Compile Include="Repositorios\RepositorioClientes.cs" />
+    <Compile Include="Repositorios\RepositorioCtasCtes.cs" />
     <Compile Include="Repositorios\RepositorioDetalleVentas.cs" />
     <Compile Include="Repositorios\RepositorioPaises.cs" />
     <Compile Include="Repositorios\RepositorioProductos.cs" />

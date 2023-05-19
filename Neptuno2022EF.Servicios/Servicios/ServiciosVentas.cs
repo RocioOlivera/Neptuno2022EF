@@ -1,5 +1,6 @@
 ﻿using Neptuno2022EF.Datos;
 using Neptuno2022EF.Datos.Interfaces;
+using Neptuno2022EF.Entidades.Dtos.Ciudad;
 using Neptuno2022EF.Entidades.Dtos.DetalleVenta;
 using Neptuno2022EF.Entidades.Dtos.Venta;
 using Neptuno2022EF.Entidades.Entidades;
@@ -98,6 +99,57 @@ namespace Neptuno2022EF.Servicios.Servicios
                     _unitOfWork.SaveChanges();
                     transaction.Complete();
                 }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        //public List<VentaListDto> GetFechas()
+        //{
+        //    try
+        //    {
+        //        return _repositorio.GetFechas();
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+        //}
+
+        public List<VentaListDto> Filtrar(Func<Venta, bool> predicado, int cantidad, int pagina)
+        {
+            try
+            {
+                return _repositorio.Filtrar(predicado, cantidad, pagina);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public int GetCantidad(Func<Venta, bool> predicado)
+        {
+            try
+            {
+                return _repositorio.GetCantidad(predicado);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public List<VentaListDto> GetVentas(int clienteId)
+        {
+            try
+            {
+                return _repositorio.GetVentas(clienteId);
             }
             catch (Exception)
             {
