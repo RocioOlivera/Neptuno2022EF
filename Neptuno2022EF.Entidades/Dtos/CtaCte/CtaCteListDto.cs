@@ -15,6 +15,7 @@ namespace Neptuno2022EF.Entidades.Dtos.CtaCte
         public decimal Haber { get; set; }
         public decimal Saldo { get; set; }
         public string Cliente { get; set; }
+        public int ClienteId { get; set; }
 
     }
 }

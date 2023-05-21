@@ -88,8 +88,8 @@ namespace Neptuno2022EF.Windows.Helpers
                     r.Cells[2].Value = detalle.PrecioUnitario;
                     r.Cells[3].Value = detalle.Subtotal;
                     break;
-                case CtaCteListDto ctaCte:
-                    r.Cells[0].Value = ctaCte.Cliente;
+                case ResumenCtaCteDto ctaCte:
+                    r.Cells[0].Value = ctaCte.NombreCliente;
                     r.Cells[1].Value = ctaCte.Saldo;
                     break;
                 case DetalleCtaCteListDto detalleCta:

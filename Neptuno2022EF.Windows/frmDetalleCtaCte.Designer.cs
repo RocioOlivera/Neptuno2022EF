@@ -31,8 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.EncabezadoPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMovimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,25 +44,9 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnIngresarPago = new System.Windows.Forms.Button();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.EncabezadoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Image = global::Neptuno2022EF.Windows.Properties.Resources.cancel_24px;
-            this.btnCerrar.Location = new System.Drawing.Point(690, 263);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(83, 87);
-            this.btnCerrar.TabIndex = 29;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // EncabezadoPanel
             // 
@@ -74,6 +59,26 @@
             this.EncabezadoPanel.Name = "EncabezadoPanel";
             this.EncabezadoPanel.Size = new System.Drawing.Size(800, 97);
             this.EncabezadoPanel.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(197, 40);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cliente:";
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Location = new System.Drawing.Point(292, 40);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(317, 22);
+            this.txtCliente.TabIndex = 1;
             // 
             // dgvDatos
             // 
@@ -173,32 +178,13 @@
             // 
             // btnIngresarPago
             // 
-            this.btnIngresarPago.Location = new System.Drawing.Point(690, 136);
+            this.btnIngresarPago.Location = new System.Drawing.Point(691, 205);
             this.btnIngresarPago.Name = "btnIngresarPago";
             this.btnIngresarPago.Size = new System.Drawing.Size(83, 85);
             this.btnIngresarPago.TabIndex = 10;
             this.btnIngresarPago.Text = "Ingresar Pago";
             this.btnIngresarPago.UseVisualStyleBackColor = true;
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.Enabled = false;
-            this.txtCliente.Location = new System.Drawing.Point(292, 40);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(317, 22);
-            this.txtCliente.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(197, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cliente:";
+            this.btnIngresarPago.Click += new System.EventHandler(this.btnIngresarPago_Click);
             // 
             // frmDetalleCtaCte
             // 
@@ -206,7 +192,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnIngresarPago);
-            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label4);
@@ -225,7 +210,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel EncabezadoPanel;
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;

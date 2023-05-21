@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using Neptuno2022EF.Entidades.Dtos.Ciudad;
 using Neptuno2022EF.Entidades.Dtos.CtaCte;
+using Neptuno2022EF.Entidades.Dtos.DetalleCtaCte;
 using Neptuno2022EF.Entidades.Dtos.Venta;
 using Neptuno2022EF.Entidades.Entidades;
 using Neptuno2022EF.Servicios.Interfaces;
@@ -39,17 +40,17 @@ namespace Neptuno2022EF.Windows
             Close();
         }
 
-        private List<CtaCteListDto> lista;
+        private List<ResumenCtaCteDto> lista;
         private void MostrarDatosEnGrilla()
         {
-            FormHelper.MostrarDatosEnGrilla<CtaCteListDto>(dgvDatos, lista);
+            FormHelper.MostrarDatosEnGrilla<ResumenCtaCteDto>(dgvDatos, lista);
         }
 
         private void RecargarGrilla()
         {
             try
             {
-                lista = _servicio.GetCtaCte();
+                lista = _servicio.GetCtasCtes();
                 MostrarDatosEnGrilla();
             }
             catch (Exception)
@@ -66,14 +67,15 @@ namespace Neptuno2022EF.Windows
                 return;
             }
             var r = dgvDatos.SelectedRows[0];
-            var ctaDto = (CtaCteListDto)r.Tag;
+            var ctaDto = (ResumenCtaCteDto)r.Tag;
             try
             {
-                var detalle = _servicio.GetDetalleCtaCte(ctaDto.CtaCteId);
+                var detalle = _servicio.GetDetalleCtaCte(ctaDto.ClienteId);
                 var ctaDetalleDto = new CtaCteDetalleDto()
                 {
-                    ctaCte = ctaDto,
+                    ctaCte = ctaCte,
                     detalleCtaCte = detalle
+
                 };
                 frmDetalleCtaCte frm = new frmDetalleCtaCte() { Text = "Detalle de la Cuenta Corriente" };
                 frm.SetCtaCte(ctaDetalleDto);
@@ -85,5 +87,6 @@ namespace Neptuno2022EF.Windows
                 throw;
             }
         }
+
     }
 }

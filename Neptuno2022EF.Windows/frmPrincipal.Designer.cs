@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCtasCtes = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCategorias = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnCiudades = new System.Windows.Forms.Button();
             this.btnPaises = new System.Windows.Forms.Button();
-            this.btnCtasCtes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -50,6 +50,19 @@
             this.label1.Size = new System.Drawing.Size(134, 24);
             this.label1.TabIndex = 12;
             this.label1.Text = "Neptuno SRL";
+            // 
+            // btnCtasCtes
+            // 
+            this.btnCtasCtes.Image = global::Neptuno2022EF.Windows.Properties.Resources.icons8_money_circulation_32;
+            this.btnCtasCtes.Location = new System.Drawing.Point(779, 154);
+            this.btnCtasCtes.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCtasCtes.Name = "btnCtasCtes";
+            this.btnCtasCtes.Size = new System.Drawing.Size(196, 94);
+            this.btnCtasCtes.TabIndex = 21;
+            this.btnCtasCtes.Text = "Ctas Ctes";
+            this.btnCtasCtes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCtasCtes.UseVisualStyleBackColor = true;
+            this.btnCtasCtes.Click += new System.EventHandler(this.btnCtasCtes_Click);
             // 
             // btnSalir
             // 
@@ -155,19 +168,6 @@
             this.btnPaises.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPaises.UseVisualStyleBackColor = true;
             this.btnPaises.Click += new System.EventHandler(this.btnPaises_Click);
-            // 
-            // btnCtasCtes
-            // 
-            this.btnCtasCtes.Image = global::Neptuno2022EF.Windows.Properties.Resources.cash_register_50px;
-            this.btnCtasCtes.Location = new System.Drawing.Point(779, 154);
-            this.btnCtasCtes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCtasCtes.Name = "btnCtasCtes";
-            this.btnCtasCtes.Size = new System.Drawing.Size(196, 94);
-            this.btnCtasCtes.TabIndex = 21;
-            this.btnCtasCtes.Text = "Ctas Ctes";
-            this.btnCtasCtes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCtasCtes.UseVisualStyleBackColor = true;
-            this.btnCtasCtes.Click += new System.EventHandler(this.btnCtasCtes_Click);
             // 
             // frmPrincipal
             // 

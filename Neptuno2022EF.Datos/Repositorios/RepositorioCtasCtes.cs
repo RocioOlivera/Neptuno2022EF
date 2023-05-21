@@ -21,18 +21,23 @@ namespace Neptuno2022EF.Datos.Repositorios
             _context = context;
         }
 
-        public List<CtaCteListDto> GetCtaCte()
+        public List<ResumenCtaCteDto> GetCtasCtes()
         {
-            return _context.CtaCtes.Include(c => c.Cliente).Select(c => new CtaCteListDto
+            var lista=_context.CtaCtes.Include(c => c.Cliente)
+                .GroupBy(c=>c.Cliente.Nombre)
+                .ToList();
+            var registros=new List<ResumenCtaCteDto>();
+            foreach (var grupo in lista)
             {
-                CtaCteId=c.CtaCteId,
-                FechaMovimiento=c.FechaMovimiento,
-                Movimiento=c.Movimiento,
-                Debe=c.Debe,
-                Haber=c.Haber,
-                Saldo=c.Saldo,
-                Cliente=c.Cliente.Nombre
-            }).AsNoTracking().ToList();
+                var itemCta = new ResumenCtaCteDto
+                {
+                    ClienteId = grupo.First().ClienteId,
+                    NombreCliente = grupo.Key,
+                    Saldo = grupo.Sum(x => x.Debe - x.Haber)
+                };
+                registros.Add(itemCta);
+            }
+            return registros;
         }
 
         public List<CtaCteListDto> GetCtaCte(int clienteId)
@@ -49,10 +54,10 @@ namespace Neptuno2022EF.Datos.Repositorios
             }).AsNoTracking().ToList();
         }
 
-        public List<DetalleCtaCteListDto> GetDetalleCtaCte(int ctaCteId)
+        public List<DetalleCtaCteListDto> GetDetalleCtaCte(int clienteId)
         {
             return _context.CtaCtes.Include(c => c.Cliente)
-                .Where(c => c.CtaCteId == ctaCteId)
+                .Where(c => c.ClienteId == clienteId)
                 .Select(c => new DetalleCtaCteListDto()
                 {
                     CtaCteId = c.CtaCteId,

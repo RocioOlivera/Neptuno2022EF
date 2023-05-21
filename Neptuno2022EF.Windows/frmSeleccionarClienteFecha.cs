@@ -1,4 +1,5 @@
 ﻿using Neptuno2022EF.Entidades.Dtos.Cliente;
+using Neptuno2022EF.Entidades.Dtos.Venta;
 using Neptuno2022EF.Entidades.Entidades;
 using NuevaAppComercial2022.Entidades.Entidades;
 using System;
@@ -21,6 +22,7 @@ namespace Neptuno2022EF.Windows
         }
 
         private ClienteListDto clienteSeleccionado;
+        private VentaListDto fechaSeleccionada;
         public ClienteListDto GetCliente()
         {
             return clienteSeleccionado;
@@ -34,7 +36,6 @@ namespace Neptuno2022EF.Windows
         {
             if (cboCliente.SelectedIndex > 0)
             {
-                clienteSeleccionado = (ClienteListDto)cboCliente.SelectedItem;
                 clienteSeleccionado = (ClienteListDto)cboCliente.SelectedItem;
             }
             else
@@ -67,6 +68,18 @@ namespace Neptuno2022EF.Windows
                 errorProvider1.SetError(cboCliente, "Debe seleccionar un cliente");
             }
             return valido;
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            //if (dtpFecha.Checked)
+            //{
+            //    fechaSeleccionada.FechaVenta = dtpFecha.Value;
+            //}
+            //else
+            //{
+            //    fechaSeleccionada = null;
+            //}
         }
     }
 }

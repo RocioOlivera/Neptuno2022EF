@@ -26,11 +26,11 @@ namespace Neptuno2022EF.Servicios.Servicios
             _repoCliente = repoClientes;
             _unitOfWork = unitOfWork;
         }
-        public List<CtaCteListDto> GetCtaCte()
+        public List<ResumenCtaCteDto> GetCtasCtes()
         {
             try
             {
-                return _repositorio.GetCtaCte();
+                return _repositorio.GetCtasCtes();
             }
             catch (Exception)
             {
@@ -52,11 +52,11 @@ namespace Neptuno2022EF.Servicios.Servicios
             }
         }
 
-        public List<DetalleCtaCteListDto> GetDetalleCtaCte(int ctaCteId)
+        public List<DetalleCtaCteListDto> GetDetalleCtaCte(int clienteId)
         {
             try
             {
-                return _repositorio.GetDetalleCtaCte(ctaCteId);
+                return _repositorio.GetDetalleCtaCte(clienteId);
             }
             catch (Exception)
             {
@@ -65,17 +65,5 @@ namespace Neptuno2022EF.Servicios.Servicios
             }
         }
 
-        public List<DetalleCtaCteListDto> GetDetalleVenta(int ctaCteId)
-        {
-            try
-            {
-                return _repositorio.GetDetalleCtaCte(ctaCteId);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
     }
 }

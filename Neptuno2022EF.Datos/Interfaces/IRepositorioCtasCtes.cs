@@ -12,9 +12,9 @@ namespace Neptuno2022EF.Datos.Interfaces
 {
     public interface IRepositorioCtasCtes
     {
-        List<CtaCteListDto> GetCtaCte();
+        List<ResumenCtaCteDto> GetCtasCtes();
         List<CtaCteListDto> GetCtaCte(int clienteId);
 
-        List<DetalleCtaCteListDto> GetDetalleCtaCte(int ctaCteId);
+        List<DetalleCtaCteListDto> GetDetalleCtaCte(int clienteId);
     }
 }
