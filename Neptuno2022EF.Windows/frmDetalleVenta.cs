@@ -38,5 +38,10 @@ namespace Neptuno2022EF.Windows
         {
             Close();
         }
+
+        private void txtVenta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,6 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DetallePanel = new System.Windows.Forms.Panel();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalesPanel = new System.Windows.Forms.Panel();
             this.txtTotalVta = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,10 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtVenta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DetallePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.TotalesPanel.SuspendLayout();
@@ -58,9 +58,10 @@
             // 
             this.DetallePanel.Controls.Add(this.dgvDatos);
             this.DetallePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DetallePanel.Location = new System.Drawing.Point(0, 107);
+            this.DetallePanel.Location = new System.Drawing.Point(0, 132);
+            this.DetallePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DetallePanel.Name = "DetallePanel";
-            this.DetallePanel.Size = new System.Drawing.Size(800, 268);
+            this.DetallePanel.Size = new System.Drawing.Size(1067, 330);
             this.DetallePanel.TabIndex = 5;
             // 
             // dgvDatos
@@ -75,35 +76,81 @@
             this.colSubtotal});
             this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDatos.Location = new System.Drawing.Point(0, 0);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
-            this.dgvDatos.Size = new System.Drawing.Size(800, 268);
+            this.dgvDatos.RowHeadersWidth = 51;
+            this.dgvDatos.Size = new System.Drawing.Size(1067, 330);
             this.dgvDatos.TabIndex = 0;
+            // 
+            // colProducto
+            // 
+            this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.MinimumWidth = 6;
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colCantidad.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.MinimumWidth = 6;
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            this.colCantidad.Width = 90;
+            // 
+            // colPrecioUnitario
+            // 
+            this.colPrecioUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colPrecioUnitario.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colPrecioUnitario.HeaderText = "P. Unit.";
+            this.colPrecioUnitario.MinimumWidth = 6;
+            this.colPrecioUnitario.Name = "colPrecioUnitario";
+            this.colPrecioUnitario.ReadOnly = true;
+            this.colPrecioUnitario.Width = 77;
+            // 
+            // colSubtotal
+            // 
+            this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSubtotal.HeaderText = "Subtotal";
+            this.colSubtotal.MinimumWidth = 6;
+            this.colSubtotal.Name = "colSubtotal";
+            this.colSubtotal.ReadOnly = true;
+            this.colSubtotal.Width = 85;
             // 
             // TotalesPanel
             // 
             this.TotalesPanel.Controls.Add(this.txtTotalVta);
             this.TotalesPanel.Controls.Add(this.label4);
             this.TotalesPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.TotalesPanel.Location = new System.Drawing.Point(0, 375);
+            this.TotalesPanel.Location = new System.Drawing.Point(0, 462);
+            this.TotalesPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TotalesPanel.Name = "TotalesPanel";
-            this.TotalesPanel.Size = new System.Drawing.Size(800, 75);
+            this.TotalesPanel.Size = new System.Drawing.Size(1067, 92);
             this.TotalesPanel.TabIndex = 4;
             // 
             // txtTotalVta
             // 
             this.txtTotalVta.Enabled = false;
-            this.txtTotalVta.Location = new System.Drawing.Point(728, 6);
+            this.txtTotalVta.Location = new System.Drawing.Point(971, 7);
+            this.txtTotalVta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotalVta.Name = "txtTotalVta";
-            this.txtTotalVta.Size = new System.Drawing.Size(60, 20);
+            this.txtTotalVta.Size = new System.Drawing.Size(79, 22);
             this.txtTotalVta.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(688, 9);
+            this.label4.Location = new System.Drawing.Point(917, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Total:";
             // 
@@ -119,16 +166,18 @@
             this.EncabezadoPanel.Controls.Add(this.label1);
             this.EncabezadoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.EncabezadoPanel.Location = new System.Drawing.Point(0, 0);
+            this.EncabezadoPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EncabezadoPanel.Name = "EncabezadoPanel";
-            this.EncabezadoPanel.Size = new System.Drawing.Size(800, 107);
+            this.EncabezadoPanel.Size = new System.Drawing.Size(1067, 132);
             this.EncabezadoPanel.TabIndex = 3;
             // 
             // btnCerrar
             // 
             this.btnCerrar.Image = global::Neptuno2022EF.Windows.Properties.Resources.cancel_24px;
-            this.btnCerrar.Location = new System.Drawing.Point(713, 11);
+            this.btnCerrar.Location = new System.Drawing.Point(951, 14);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 51);
+            this.btnCerrar.Size = new System.Drawing.Size(100, 63);
             this.btnCerrar.TabIndex = 29;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -139,100 +188,71 @@
             // txtFechaVenta
             // 
             this.txtFechaVenta.Enabled = false;
-            this.txtFechaVenta.Location = new System.Drawing.Point(90, 63);
+            this.txtFechaVenta.Location = new System.Drawing.Point(120, 78);
+            this.txtFechaVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFechaVenta.Name = "txtFechaVenta";
-            this.txtFechaVenta.Size = new System.Drawing.Size(131, 20);
+            this.txtFechaVenta.Size = new System.Drawing.Size(173, 22);
             this.txtFechaVenta.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 65);
+            this.label3.Location = new System.Drawing.Point(33, 80);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Fecha Vta:";
             // 
             // txtCliente
             // 
             this.txtCliente.Enabled = false;
-            this.txtCliente.Location = new System.Drawing.Point(90, 37);
+            this.txtCliente.Location = new System.Drawing.Point(120, 46);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(435, 20);
+            this.txtCliente.Size = new System.Drawing.Size(579, 22);
             this.txtCliente.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 39);
+            this.label2.Location = new System.Drawing.Point(33, 48);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(51, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Cliente:";
             // 
             // txtVenta
             // 
             this.txtVenta.Enabled = false;
-            this.txtVenta.Location = new System.Drawing.Point(90, 11);
+            this.txtVenta.Location = new System.Drawing.Point(120, 14);
+            this.txtVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtVenta.Name = "txtVenta";
-            this.txtVenta.Size = new System.Drawing.Size(84, 20);
+            this.txtVenta.Size = new System.Drawing.Size(111, 22);
             this.txtVenta.TabIndex = 1;
+            this.txtVenta.TextChanged += new System.EventHandler(this.txtVenta_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 13);
+            this.label1.Location = new System.Drawing.Point(33, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Venta Nro:";
             // 
-            // colProducto
-            // 
-            this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colCantidad.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.ReadOnly = true;
-            this.colCantidad.Width = 74;
-            // 
-            // colPrecioUnitario
-            // 
-            this.colPrecioUnitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colPrecioUnitario.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colPrecioUnitario.HeaderText = "P. Unit.";
-            this.colPrecioUnitario.Name = "colPrecioUnitario";
-            this.colPrecioUnitario.ReadOnly = true;
-            this.colPrecioUnitario.Width = 67;
-            // 
-            // colSubtotal
-            // 
-            this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colSubtotal.HeaderText = "Subtotal";
-            this.colSubtotal.Name = "colSubtotal";
-            this.colSubtotal.ReadOnly = true;
-            this.colSubtotal.Width = 71;
-            // 
             // frmDetalleVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.ControlBox = false;
             this.Controls.Add(this.DetallePanel);
             this.Controls.Add(this.TotalesPanel);
             this.Controls.Add(this.EncabezadoPanel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmDetalleVenta";
             this.Text = "frmDetalleVenta";
             this.Load += new System.EventHandler(this.frmDetalleVenta_Load);

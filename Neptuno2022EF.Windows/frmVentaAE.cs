@@ -279,5 +279,10 @@ namespace Neptuno2022EF.Windows
             }
 
         }
+
+        private void frmVentaAE_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

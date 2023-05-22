@@ -9,6 +9,7 @@ using Neptuno2022EF.Windows.Helpers;
 using Neptuno2022EF.Windows.Helpers.Enum;
 using NuevaAppComercial2022.Entidades.Entidades;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,8 @@ namespace Neptuno2022EF.Windows
 
         //List<DetalleCtaCteListDto> lista;
         private ClienteListDto clienteListDto;
+        private List<DetalleCtaCteListDto> lista;
+        private ResumenCtaCteDto resumenCtaCteDto;
 
         private CtaCteDetalleDto detalleDto;
         public void SetCtaCte(CtaCteDetalleDto ctacteDetalleDto)
@@ -38,12 +41,14 @@ namespace Neptuno2022EF.Windows
             detalleDto = ctacteDetalleDto;
         }
 
+
+
         private void frmDetalleCtaCte_Load(object sender, EventArgs e)
         {
-            txtCliente.Text = detalleDto.ctaCte.Cliente;
-            
-            txtSaldo.Text = detalleDto.ctaCte.Saldo.ToString();
-            FormHelper.MostrarDatosEnGrilla<DetalleCtaCteListDto>(dgvDatos, detalleDto.detalleCtaCte );
+
+            txtCliente.Text = detalleDto.detalleCtaCte.First().Cliente;
+            txtSaldo.Text = detalleDto.detalleCtaCte.Sum(x => x.Debe - x.Haber).ToString();
+            FormHelper.MostrarDatosEnGrilla<DetalleCtaCteListDto>(dgvDatos, detalleDto.detalleCtaCte);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

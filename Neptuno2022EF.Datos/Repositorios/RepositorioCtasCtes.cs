@@ -62,6 +62,7 @@ namespace Neptuno2022EF.Datos.Repositorios
                 {
                     CtaCteId = c.CtaCteId,
                     FechaMovimiento = c.FechaMovimiento,
+                    Movimiento=c.Movimiento,
                     Debe = c.Debe,
                     Haber = c.Haber,
                     Saldo = c.Saldo,
