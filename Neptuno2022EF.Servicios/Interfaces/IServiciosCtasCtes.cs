@@ -16,6 +16,6 @@ namespace Neptuno2022EF.Servicios.Interfaces
         List<ResumenCtaCteDto> GetCtasCtes();
         List<CtaCteListDto> GetCtaCte(int clienteId);
         List<DetalleCtaCteListDto> GetDetalleCtaCte(int clienteId);
-
+        void Guardar(CtaCte ctaCte);
     }
 }

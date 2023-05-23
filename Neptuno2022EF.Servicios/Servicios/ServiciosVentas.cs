@@ -4,9 +4,11 @@ using Neptuno2022EF.Entidades.Dtos.Ciudad;
 using Neptuno2022EF.Entidades.Dtos.DetalleVenta;
 using Neptuno2022EF.Entidades.Dtos.Venta;
 using Neptuno2022EF.Entidades.Entidades;
+using Neptuno2022EF.Entidades.Enums;
 using Neptuno2022EF.Servicios.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -156,6 +158,38 @@ namespace Neptuno2022EF.Servicios.Servicios
 
                 throw;
             }
+        }
+
+        public void Pagar(Venta venta, FormaPago forma, decimal importe)
+        {
+            //SqlTransaction tran = null;
+            //try
+            //{
+            //    _repositorio = new IRepositorioVentas(cn, tran);
+            //    repoCtaCte = new CtasCteRepositorio(cn, tran);
+            //    venta.Estado = Estado.Paga;
+            //    repositorio.Editar(venta);
+            //    var saldo = repoCtaCte.GetSaldo(venta.ClienteId, cn, tran);//consulto el saldo del cliente
+
+            //    Creo la clase ctacte y le paso los datos
+            //    var ctaCte = new CtaCte
+            //    {
+            //        FechaMovimiento = DateTime.Now,
+            //        ClienteId = venta.ClienteId,
+            //        Debe = 0,
+            //        Haber = importe,
+            //        Saldo = saldo - importe,
+            //        Movimiento = ConstruirMovimiento(venta, forma)
+
+            //    };
+            //    repoCtaCte.Agregar(ctaCte, cn, tran);//Agrego el registro en la tabla de CtasCtes
+
+            //    tran.Commit();
+            //}
+            //catch (Exception e)
+            //{
+            //    tran.Rollback();
+            //}
         }
     }
 }
